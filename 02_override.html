@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 重写 
+        function Student(sname,sage){
+            this.sname=sname;
+            this.sage=sage;
+        }
+        // 给构造函数原型对象添加方法
+        Student.prototype.toString=function(){
+            return `{sname:${this.sname},sage:${this.sage}}`;
+        }
+        
+        var arr=[1,2,3,4,65];
+        var date=new Date();
+        // 创建两个对象
+        var lilei=new Student("lilei",11);
+        var hmm=new Student("hmm",20);
+        // 调用方法
+        console.log(lilei.toString());
+        console.log(hmm.toString());
+        console.log(arr.toString());
+        console.log(date.toString());
+    </script>
+</body>
+</html>

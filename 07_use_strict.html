@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        function Student(sname,sage){
+            this.sname=sname;
+            this.sage=sage;
+        }
+        var lilei=new Student("lilei",11);
+        console.log(lilei);
+        // var hmm=Student("hmm",12);//this 指向undefined undefined.sname报错
+        // console.log(hmm);undefined
+        // console.log(sname);
+        // 阶乘
+        function add(n){
+            if(n<=1){return 1}
+            return n*add(n-1);
+        }
+        console.log(add(100));
+        // 斐波那契数列
+        function fib(n){
+            if(n<3){return 1}
+            return fib(n-1)+fib(n-2);
+        }
+        console.log(fib(21));
+        // 循环计算斐波那契数列
+        function fib1(n){
+            var f1=1,f2=1;
+            for(var i=3;i<=n;i++){
+                var fn=f1+f2;
+                f1=f2;
+                f2=fn;
+            }
+            return fn;
+        }
+        console.log(fib1(100));
+    </script>
+</body>
+</html>

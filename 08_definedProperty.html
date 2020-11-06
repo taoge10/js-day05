@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        var eric={
+            eid:1001,
+            sname:"埃里克",
+            salary:12000000
+        }
+        Object.defineProperty(eric,"eid",{
+            writable:false,//开启只读开关
+            configurable:false //禁止修改writable开关 禁止删除
+        });
+        // 设置salary不能for in 遍历
+        Object.defineProperty(eric,"salary",{
+            enumerable:false
+        });
+        // Cannot assign to read only property 'eid'
+        // 不能赋值给只读属性eid
+        // eric.eid=1002;
+        console.log(eric.eid);
+        console.log(eric);
+        
+    </script>
+</body>
+</html>

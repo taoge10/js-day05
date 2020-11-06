@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        var eric={
+            eid:1001,
+            sname:"埃里克",
+            salary:12000000
+        }
+        Object.defineProperties(eric,{
+            eid:{
+                writable:false,//只读
+                configurable:false
+            },
+            ename:{
+                configurable:false  //禁止删除
+            },
+            salary:{
+                enumerable:false,//禁止遍历
+                configurable:false//双保险
+            }
+        });
+        // eric.eid=1002;
+        // delete eric.ename;
+        for(var key in eric){
+            console.log(eric[key]);
+        }
+        console.log(eric);
+    </script>
+</body>
+</html>
